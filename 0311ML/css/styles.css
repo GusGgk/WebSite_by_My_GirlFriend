@@ -1,0 +1,475 @@
+/* ======================================
+1. VARIÁVEIS E ESTILOS GLOBAIS
+======================================
+*/
+:root {
+    --cor-principal: #ff0080;
+    --cor-principal-clara: #ff4da6;
+    --cor-secundaria: #1a0a1f;
+    --cor-fundo-card: #1f1024;
+    --cor-texto: #e0e0e0;
+    --cor-texto-claro: #a0a0a0;
+    --cor-borda: #582a4c;
+    --cor-destaque: #ff66b2;
+    --font-principal: 'Montserrat', sans-serif;
+    --font-titulos: 'Dancing Script', cursive;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-principal);
+    background-color: #0a0014;
+    background-image: 
+        radial-gradient(ellipse at 20% 20%, #2d0f3a 0%, transparent 50%),
+        radial-gradient(ellipse at 80% 80%, #3d1a4a 0%, transparent 50%),
+        radial-gradient(ellipse at center, #1a0a1f 0%, #0a0014 100%);
+    color: var(--cor-texto);
+    line-height: 1.6;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* Elementos decorativos românticos */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M50,30 C55,20 65,20 70,30 C75,40 65,50 50,60 C35,50 25,40 30,30 C35,20 45,20 50,30 Z' fill='%23ff0080' fill-opacity='0.03'/%3E%3C/svg%3E");
+    z-index: -1;
+    pointer-events: none;
+}
+
+.heart-decoration {
+    position: fixed;
+    font-size: 20px;
+    color: var(--cor-principal);
+    opacity: 0.1;
+    z-index: -1;
+    animation: float 15s infinite linear;
+}
+
+.heart-decoration:nth-child(1) { top: 10%; left: 5%; animation-delay: 0s; }
+.heart-decoration:nth-child(2) { top: 20%; right: 10%; animation-delay: 2s; }
+.heart-decoration:nth-child(3) { bottom: 30%; left: 15%; animation-delay: 4s; }
+.heart-decoration:nth-child(4) { bottom: 15%; right: 5%; animation-delay: 6s; }
+.heart-decoration:nth-child(5) { top: 40%; left: 20%; animation-delay: 8s; }
+
+@keyframes float {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    25% { transform: translateY(-20px) rotate(5deg); }
+    50% { transform: translateY(0) rotate(0deg); }
+    75% { transform: translateY(20px) rotate(-5deg); }
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-titulos);
+    color: var(--cor-principal);
+    margin-bottom: 1rem;
+    text-align: center;
+    text-shadow: 0 0 8px var(--cor-principal), 0 0 12px rgba(255, 0, 128, 0.5);
+}
+
+h1 { 
+    font-size: 3.2em; 
+    position: relative;
+    display: inline-block;
+}
+
+h1::after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 10%;
+    width: 80%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--cor-principal), transparent);
+}
+
+h2 { 
+    font-size: 2.5em; 
+    position: relative;
+    padding-bottom: 15px;
+}
+
+h2::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 25%;
+    width: 50%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--cor-borda), transparent);
+}
+
+h3 { 
+    font-size: 1.8em; 
+    text-align: left; 
+}
+
+p {
+    margin-bottom: 1rem;
+    color: var(--cor-texto-claro);
+}
+
+section {
+    padding: 40px 20px;
+    max-width: 1000px;
+    margin: 20px auto;
+}
+
+/* ======================================
+2. CONTEÚDO PRINCIPAL (O SITE)
+======================================
+*/
+
+.main-content {
+    opacity: 1;
+    animation: fadeInContent 1.5s ease-in-out;
+}
+
+@keyframes fadeInContent {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.hero-section {
+    background: linear-gradient(135deg, var(--cor-secundaria) 0%, rgba(42, 15, 55, 0.9) 100%);
+    padding: 80px 20px;
+    text-align: center;
+    border-bottom: 2px solid var(--cor-borda);
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        radial-gradient(circle at 20% 30%, rgba(255, 0, 128, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 70%, rgba(255, 0, 128, 0.1) 0%, transparent 50%);
+    z-index: 0;
+}
+
+.hero-section h1 {
+    margin-bottom: 0;
+    position: relative;
+    z-index: 1;
+    animation: pulse 3s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.02); }
+}
+
+.hero-section p {
+    font-size: 1.3em;
+    color: var(--cor-texto-claro);
+    font-style: italic;
+    margin-bottom: 0;
+    position: relative;
+    z-index: 1;
+}
+
+/* --- Seções com Fundo de Card (Agrupadas) --- */
+.contador-section,
+.card,
+.galeria,
+.playlist-section {
+    background-color: var(--cor-fundo-card);
+    border: 1px solid var(--cor-borda);
+    border-radius: 16px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3), 0 0 20px rgba(255, 0, 128, 0.1);
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contador-section:hover,
+.card:hover,
+.galeria:hover,
+.playlist-section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4), 0 0 30px rgba(255, 0, 128, 0.15);
+}
+
+.contador-section::before,
+.card::before,
+.galeria::before,
+.playlist-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, var(--cor-principal), var(--cor-destaque), var(--cor-principal));
+    opacity: 0.7;
+}
+
+.contador-section {
+    padding: 30px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    max-width: 600px;
+    position: relative;
+    z-index: 10;
+}
+
+#contador {
+    font-family: var(--font-principal);
+    font-weight: 400;
+    font-size: 2.2em;
+    color: var(--cor-texto);
+    margin-bottom: 0;
+    text-shadow: 0 0 10px rgba(255, 0, 128, 0.3);
+}
+
+#curiosidades-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.card {
+    padding: 25px;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card:hover::after {
+    content: "❤️";
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 1.5em;
+    opacity: 0.7;
+    animation: heartbeat 1.5s ease infinite;
+}
+
+@keyframes heartbeat {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+}
+
+.card h3 {
+    color: var(--cor-principal);
+    border-bottom: 2px solid var(--cor-secundaria);
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.card h3::before {
+    content: "💖";
+    margin-right: 10px;
+    font-size: 0.8em;
+}
+
+.card p {
+    margin-bottom: 0;
+}
+
+.galeria {
+    padding: 30px;
+}
+
+.grid-galeria {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+}
+
+.grid-galeria img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.4s ease;
+    cursor: pointer;
+    filter: brightness(0.9);
+    position: relative;
+}
+
+.grid-galeria img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3), 0 0 20px rgba(255, 0, 128, 0.3);
+    filter: brightness(1);
+    z-index: 2;
+}
+
+.grid-galeria img::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(255, 0, 128, 0.2) 0%, transparent 50%);
+    border-radius: 10px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.grid-galeria img:hover::after {
+    opacity: 1;
+}
+
+.playlist-section {
+    padding: 30px;
+}
+
+/* Botão de voltar ao topo */
+.back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: var(--cor-principal);
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5em;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 1000;
+    border: none;
+    outline: none;
+}
+
+.back-to-top.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.back-to-top:hover {
+    background: var(--cor-destaque);
+    transform: translateY(-5px);
+}
+
+/* Loading spinner para as imagens */
+.loading-spinner {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    border: 3px solid rgba(255, 0, 128, 0.3);
+    border-radius: 50%;
+    border-top-color: var(--cor-principal);
+    animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* --- Footer --- */
+footer {
+    text-align: center;
+    padding: 30px;
+    margin-top: 40px;
+    background: linear-gradient(to top, var(--cor-secundaria) 0%, rgba(26, 10, 31, 0.8) 100%);
+    color: var(--cor-principal);
+    border-top: 2px solid var(--cor-borda);
+    position: relative;
+}
+
+footer::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        radial-gradient(circle at 30% 20%, rgba(255, 0, 128, 0.05) 0%, transparent 50%),
+        radial-gradient(circle at 70% 80%, rgba(255, 0, 128, 0.05) 0%, transparent 50%);
+}
+
+footer p {
+    margin-bottom: 5px;
+    font-size: 0.9em;
+    position: relative;
+    z-index: 1;
+}
+
+/* ======================================
+3. RESPONSIVIDADE (CELULAR)
+======================================
+*/
+@media (max-width: 768px) {
+    h1 { font-size: 2.5em; }
+    h2 { font-size: 2em; }
+    
+    #contador {
+        font-size: 1.8em;
+    }
+    
+    section {
+        padding: 30px 15px;
+    }
+
+    .hero-section {
+        padding: 60px 15px;
+    }
+    
+    .grid-galeria {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 10px;
+    }
+    
+    .back-to-top {
+        bottom: 20px;
+        right: 20px;
+        width: 45px;
+        height: 45px;
+    }
+}
+
+@media (max-width: 480px) {
+    #contador {
+        font-size: 1.4em;
+        line-height: 1.4;
+    }
+
+    .grid-galeria {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    
+    .grid-galeria img {
+        height: 300px;
+    }
+    
+    .heart-decoration {
+        display: none;
+    }
+    
+    .card h3 {
+        font-size: 1.5em;
+    }
+}
