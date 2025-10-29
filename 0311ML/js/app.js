@@ -12,8 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
 // Função assíncrona para buscar os dados
 async function carregarConteudo() {
     try {
-        const response = await fetch('data.json');
-        
+        const response = await fetch('./data.json');        
         if (!response.ok) {
             throw new Error(`Erro ao carregar dados: ${response.statusText}`);
         }
@@ -276,3 +275,4 @@ function inicializarFiltrosGaleria() {
     });
 
 }
+
