@@ -34,7 +34,7 @@ Criei este repositório como forma de:
 ## 🚀 Deploy
 
 O site está disponível em:  
-👉 **[https://gusggk.github.io/WebSite_by_My_GirlFriend/0311ML/index-intro.html](https://gusggk.github.io/WebSite_by_My_GirlFriend/0311ML/index-intro.html)**  
+👉 **[https://gusggk.github.io/WebSite_by_My_GirlFriend/index-intro.html](https://gusggk.github.io/WebSite_by_My_GirlFriend/index-intro.html)**  
 
 ---
 
