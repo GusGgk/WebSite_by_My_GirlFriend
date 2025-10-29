@@ -54,20 +54,15 @@ body {
     transform: scale(1.05);
 }
 
-/* --- ESTILOS DA ROSA (DA INSPIRAÇÃO, CORES ADAPTADAS) --- */
 
 .rosa-wrapper div {
     position: absolute;
 }
 .glow-ring {
-    /* Anel de brilho do seu tema */
     position: absolute;
-    
-    /* --- CORREÇÃO DE ALINHAMENTO --- */
-    /* O centro da flor (pétalas) está perto de 40px do topo e 43px da esquerda */
-    top: 300px;
-    left: 80px; 
-    transform: translate(-50%, -50%); /* Centraliza o anel neste ponto */
+     top: 0; 
+    left: 0;
+    transform: translate(-30px, 0px); 
     
     width: 250px;
     height: 250px;
@@ -76,10 +71,16 @@ body {
     opacity: 0.3;
     animation: pulse 2s ease-in-out infinite;
     box-shadow: 0 0 20px #ff0080;
+    pointer-events: none; 
 }
 @keyframes pulse {
+    0%, 100% {
+        transform: translate(-30px, 0px) scale(1); /* Posição inicial */
+        opacity: 0.3;
+        box-shadow: 0 0 20px #ff0080;
+    }
     50% { 
-        transform: translate(-50%, -50%) scale(1.1); 
+        transform: translate(-30px, 0px) scale(1.1); /* Posição inicial + escala */
         opacity: 0.1; 
         box-shadow: 0 0 40px #ff0080;
     }
