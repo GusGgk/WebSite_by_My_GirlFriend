@@ -7,117 +7,203 @@
   "curiosidades": [
     {
       "titulo": "Onde Tudo Começou",
-      "texto": "Aqui você escreve sobre o dia em que se conheceram, a primeira conversa, o primeiro 'oi'...",
+      "texto": "Tudo começou na escola, no curso para o ENEM, onde eu te vi pela primeira vez, demorei até conversar com você, mas quando eu finalmente consegui te chamar para sair, você quase me deu um bolo KKKKK, mas no final saímos juntos e vimos que a química bateu.",
       "carrossel": [
         {
-          "url": "assets/images/primeiro-encontro/1.jpg",
+          "url": "assets/images/1encontro.jpg",
           "descricao": "Nosso primeiro encontro"
         },
         {
-          "url": "assets/images/primeiro-encontro/2.jpg",
-          "descricao": "O lugar onde nos conhecemos"
+          "url": "assets/images/taisho.jpg",
+          "descricao": "No taisho"
         },
         {
-          "url": "assets/images/primeiro-encontro/3.jpg",
-          "descricao": "Primeira selfie juntos"
+          "url": "assets/images/escola.jpg",
+          "descricao": "Primeira vez na escola juntos"
         }
       ]
     },
     {
-      "titulo": "Nossa Piada Favorita",
-      "texto": "Aquela piada interna que só nós dois entendemos e que nos faz rir em momentos aleatórios.",
+      "titulo": "Momentos favoritos",
+      "texto": "Todos meus momentos com você são únicos meu amor, mas separei com algumas fotos, momentos que eu esqueci completamente do mundo,dos problemas e só consegui pensar na sua companhia.",
       "carrossel": [
         {
-          "url": "assets/images/piadas/1.jpg",
-          "descricao": "Momento engraçado que virou piada"
+          "url": "assets/images/5.jpg",
+          "descricao": "Nossas bricadeiras no mar de Recife"
         },
         {
-          "url": "assets/images/piadas/2.jpg",
-          "descricao": "Outra situação engraçada"
+          "url": "assets/images/9doutora.jpg",
+          "descricao": "Uma das primeiras vezes que vi você de jaleco🥰"
+        },
+        {
+          "url": "assets/images/10newdate.jpg",
+          "descricao": "Quando decidimos acordar 5:30 da manhã para ver o nascer do sol em balneário, fazendo um piquenique"
+        },
+        {
+          "url": "assets/images/18.jpg",
+          "descricao": "Não podia faltar a gente andando de jet ski pela primeira vez"
         }
       ]
     },
     {
-      "titulo": "Aquele Perrengue Chique",
-      "texto": "Aquele dia que tudo deu errado, mas no fim foi uma ótima história (como a chuva na praia ou o dia que queimamos o jantar).",
+      "titulo": "Momentos de Parceiria",
+      "texto": "Separei alguns momentos que percebi o quanto somos parceiros, seja em viagens, em perrengues ou até mesmo no dia a dia, você sempre está do meu lado e eu do seu, e isso me faz muito feliz.",
       "carrossel": [
         {
-          "url": "assets/images/perrengues/1.jpg",
-          "descricao": "O famoso jantar queimado"
+          "url": "assets/images/1.jpg",
+          "descricao": "Quando eu não queria fazer nada no meu aniversário e você fez questão de me arrumar para passearmos e no final do dia tirarmos essa foto juntos"
         },
         {
-          "url": "assets/images/perrengues/2.jpg",
-          "descricao": "Dia da chuva na praia"
+          "url": "assets/images/16palmeiras.jpg",
+          "descricao": "Quando você topou ir no jogo do palmeiras só para me fazer feliz, mesmo você podendo fazer outras coisas legais"
         },
         {
-          "url": "assets/images/perrengues/3.jpg",
-          "descricao": "Outro perrengue divertido"
+          "url": "assets/images/15.png",
+          "descricao": "Nossa parceiria sempre realizar conquistas juntos🎓"
         }
       ]
     },
     {
       "titulo": "Minha Coisa Favorita em Você",
-      "texto": "O seu sorriso, o jeito que seu olho brilha, sua paciência comigo, etc. (Escolha uma coisa legal para escrever aqui).",
+      "texto": "Impossível descrever uma única coisa em você que eu amo, é díficil expressar tudo que eu gosto, admiro em você, amo seu sorriso, sua bondade, simpatia, seus olhos, suas caretas, brincadeiras, enfim te amo por completo.",
       "carrossel": [
         {
-          "url": "assets/images/favoritas/1.jpg",
+          "url": "assets/images/12.jpg",
+          "descricao": "Sua alegria e energia contagiante"
+        },
+        {
+          "url": "assets/images/sorriso.jpg",
           "descricao": "Seu sorriso lindo"
         },
         {
-          "url": "assets/images/favoritas/2.jpg",
-          "descricao": "Seu olhar especial"
+          "url": "assets/images/meigo.jpg",
+          "descricao": "Sua ingenuidade e jeito meigo de ser"
         }
+        
       ]
     }
   ],
+
   "galeria": {
     "titulo": "Nossa Galeria de Memórias",
     "descricao": "Todos os nossos momentos especiais guardados para sempre",
     "fotos": [
       {
-        "url": "assets/images/galeria/1.jpg",
+        "url": "assets/images/1encontro.jpg",
         "descricao": "Nossa primeira foto juntos!",
-        "data": "2024-06-21",
+        "data": "2024-04-05",
         "categoria": "primeiros-momentos"
       },
       {
-        "url": "assets/images/galeria/2.jpg",
+        "url": "assets/images/taisho.jpg",
+        "descricao": "No taisho",
+        "data": "",
+        "categoria": "primeiros-momentos"
+      },
+      {
+        "url": "assets/images/escola.jpg",
+        "descricao": "Primeira vez na escola juntos",
+        "data": "",
+        "categoria": "primeiros-momentos"
+      },
+      {
+        "url": "assets/images/5.jpg",
+        "descricao": "Nossas brincadeiras no mar de Recife",
+        "data": "",
+        "categoria": "viagens"
+      },
+      {
+        "url": "assets/images/9doutora.jpg",
+        "descricao": "Uma das primeiras vezes que vi você de jaleco🥰",
+        "data": "",
+        "categoria": "especiais"
+      },
+      {
+        "url": "assets/images/10newdate.jpg",
+        "descricao": "Piquenique ao nascer do sol em Balneário",
+        "data": "",
+        "categoria": "viagens"
+      },
+      {
+        "url": "assets/images/18.jpg",
+        "descricao": "Andando de jet ski pela primeira vez",
+        "data": "",
+        "categoria": "viagens"
+      },
+      {
+        "url": "assets/images/1.jpg",
+        "descricao": "Foto do meu aniversário — você me arrumou e saímos para passear",
+        "data": "",
+        "categoria": "cotidiano"
+      },
+      {
+        "url": "assets/images/16palmeiras.jpg",
+        "descricao": "Quando você topou ir no jogo do Palmeiras só para me fazer feliz",
+        "data": "",
+        "categoria": "eventos"
+      },
+      {
+        "url": "assets/images/15.png",
+        "descricao": "Parceiria — realizando conquistas juntos🎓",
+        "data": "",
+        "categoria": "especiais"
+      },
+      {
+        "url": "assets/images/12.jpg",
+        "descricao": "Sua alegria e energia contagiante",
+        "data": "",
+        "categoria": "especiais"
+      },
+      {
+        "url": "assets/images/sorriso.jpg",
+        "descricao": "Seu sorriso lindo",
+        "data": "",
+        "categoria": "especiais"
+      },
+      {
+        "url": "assets/images/2.jpg",
         "descricao": "Naquela viagem inesquecível para...",
         "data": "2024-07-15",
         "categoria": "viagens"
       },
       {
-        "url": "assets/images/galeria/3.jpg",
+        "url": "assets/images/3.jpg",
         "descricao": "Selfie boba no sofá",
         "data": "2024-08-02",
         "categoria": "cotidiano"
       },
       {
-        "url": "assets/images/galeria/4.jpg",
+        "url": "assets/images/4.jpg",
         "descricao": "Formatura / Casamento / Evento importante",
         "data": "2024-09-20",
         "categoria": "eventos"
       },
       {
-        "url": "assets/images/galeria/5.jpg",
+        "url": "assets/images/5.jpg",
         "descricao": "Tentando cozinhar juntos",
         "data": "2024-10-05",
         "categoria": "cotidiano"
       },
       {
-        "url": "assets/images/galeria/6.jpg",
+        "url": "assets/images/6.jpg",
         "descricao": "Uma foto sua que eu amo",
         "data": "2024-11-12",
         "categoria": "especiais"
       },
       {
-        "url": "assets/images/galeria/7.jpg",
+        "url": "assets/images/7.jpg",
         "descricao": "Nosso primeiro Natal juntos",
         "data": "2024-12-25",
         "categoria": "datas-especiais"
       },
       {
-        "url": "assets/images/galeria/8.jpg",
+        "url": "assets/images/8.jpg",
+        "descricao": "Aquele pôr do sol inesquecível",
+        "data": "2025-01-15",
+        "categoria": "natureza"
+      },
+      {
+        "url": "assets/images/meigo.jpg",
         "descricao": "Aquele pôr do sol inesquecível",
         "data": "2025-01-15",
         "categoria": "natureza"
@@ -134,6 +220,7 @@
       "especiais"
     ]
   },
+
   "playlist": {
     "titulo": "Nossa Trilha Sonora",
     "url": "https://open.spotify.com/embed/playlist/0l2SFpiXJMLdlsS6lmIBWH?utm_source=generator",
