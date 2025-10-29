@@ -1,9 +1,8 @@
-/* --- 
+/*
 ======================================
-Arquivo: js/app.js
 Carrega o conteúdo dinâmico do data.json
 ======================================
---- */
+*/
 
 // Espera o DOM carregar
 document.addEventListener('DOMContentLoaded', () => {
@@ -135,7 +134,6 @@ function carregarGaleria(galeria) {
 }
 
 // Função para carregar a playlist
-// No arquivo app.js, adicione esta função:
 
 function carregarPlaylist(playlist) {
     const container = document.getElementById('playlist-container');
@@ -276,4 +274,5 @@ function inicializarFiltrosGaleria() {
             });
         });
     });
+
 }
