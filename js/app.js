@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
 // Função assíncrona para buscar os dados
 async function carregarConteudo() {
     try {
-        const response = await fetch('./data.json');        
+        const response = await fetch('./data.json');
         if (!response.ok) {
             throw new Error(`Erro ao carregar dados: ${response.statusText}`);
         }
@@ -30,16 +30,30 @@ async function carregarConteudo() {
     } catch (error) {
         console.error("Não foi possível carregar o conteúdo:", error);
         const containerCuriosidades = document.getElementById('curiosidades-container');
-        containerCuriosidades.innerHTML = "<p>Ops! Não consegui carregar nossas memórias. Tente recarregar a página.</p>";
+        if (containerCuriosidades) { // Adicionada verificação de segurança
+            containerCuriosidades.innerHTML = "<p>Ops! Não consegui carregar nossas memórias. Tente recarregar a página.</p>";
+        }
     }
 }
 
 // Atualiza informações do casal no header
 function atualizarInfoCasal(casal) {
-    const heroSection = document.querySelector('.hero-section h1');
-    if (heroSection && casal) {
-        heroSection.textContent = `${casal.nome1} e ${casal.nome2}`;
+    // Seletor trocado para ID (mais robusto)
+    const heroTitle = document.getElementById('hero-titulo');
+    const heroSubtitle = document.getElementById('hero-subtitulo');
+    
+    if (heroTitle && casal) {
+        heroTitle.textContent = `${casal.nome1} e ${casal.nome2}`;
     }
+    // (Opcional: você pode adicionar um subtitulo no seu data.json)
+    if (heroSubtitle && casal.subtitulo) {
+        heroSubtitle.textContent = casal.subtitulo;
+    }
+    
+    /* NOTA: O seu script.js já tem a data correta do contador.
+    Não precisamos passá-la do data.json, a menos que você queira.
+    Vamos manter o seu script.js como está, pois funciona.
+    */
 }
 
 // Função para criar os cards de curiosidades com carrossel
@@ -132,23 +146,27 @@ function carregarGaleria(galeria) {
     inicializarFiltrosGaleria();
 }
 
-// Função para carregar a playlist
-
+// ======================================
+// MUDANÇA CRÍTICA AQUI
+// ======================================
 function carregarPlaylist(playlist) {
+    // IDs dos novos elementos do index.html
     const container = document.getElementById('playlist-container');
-    
-    if (!playlist || !playlist.url) {
-        container.innerHTML = `
-            <div class="playlist-placeholder">
-                <p>🎵 Nossa playlist especial em breve aqui!</p>
-                <small>Adicione o link da playlist do Spotify no data.json</small>
-            </div>
-        `;
-        return;
+    const tituloElement = document.getElementById('playlist-titulo');
+    const descricaoElement = document.getElementById('playlist-descricao');
+
+    // Atualiza o título e a descrição
+    if (tituloElement && playlist.titulo) {
+        tituloElement.innerText = playlist.titulo;
+    }
+    if (descricaoElement && playlist.descricao) {
+        descricaoElement.innerText = playlist.descricao;
     }
 
-    // Verifica se é um link do Spotify
-    if (playlist.url.includes('open.spotify.com')) {
+    if (!container) return; // Se o container não existir, para aqui
+
+    // Verifica se a URL da playlist existe e NÃO é o placeholder
+    if (playlist && playlist.url && playlist.url !== 'LINK_DA_SUA_PLAYLIST_EMBUTIDA_AQUI') {
         container.innerHTML = `
             <iframe style="border-radius:12px" 
                 src="${playlist.url}" 
@@ -159,13 +177,13 @@ function carregarPlaylist(playlist) {
                 allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
                 loading="lazy">
             </iframe>
-            <p class="playlist-descricao">${playlist.descricao || 'Nossa trilha sonora especial'}</p>
         `;
     } else {
+        // Se não houver link, mostra o placeholder
         container.innerHTML = `
-            <div class="playlist-error">
-                <p>❌ Link da playlist inválido</p>
-                <small>Use um link de incorporação do Spotify</small>
+            <div class="playlist-placeholder">
+                <p>🎵 Nossa playlist especial em breve aqui!</p>
+                <small>Adicione o link da playlist do Spotify no data.json</small>
             </div>
         `;
     }
@@ -190,7 +208,8 @@ function formatarCategoria(categoria) {
 }
 
 function formatarData(dataString) {
-    const data = new Date(dataString);
+    // Adiciona "T00:00:00" para evitar problemas de fuso horário (Timezone)
+    const data = new Date(dataString + "T00:00:00");
     return data.toLocaleDateString('pt-BR');
 }
 
@@ -205,6 +224,8 @@ function inicializarCarrosseis() {
         const nextBtn = container.querySelector('.carrossel-btn.next');
         const indicadores = container.querySelectorAll('.carrossel-indicador');
         
+        if (!carrossel || !prevBtn || !nextBtn || !indicadores) return; // Proteção
+
         let currentSlide = 0;
         
         function updateCarrossel() {
@@ -213,24 +234,21 @@ function inicializarCarrosseis() {
                 behavior: 'smooth'
             });
             
-            // Atualiza indicadores
             indicadores.forEach((ind, index) => {
                 ind.classList.toggle('ativo', index === currentSlide);
             });
         }
         
-        // Event listeners
-        prevBtn?.addEventListener('click', () => {
+        prevBtn.addEventListener('click', () => {
             currentSlide = Math.max(0, currentSlide - 1);
             updateCarrossel();
         });
         
-        nextBtn?.addEventListener('click', () => {
+        nextBtn.addEventListener('click', () => {
             currentSlide = Math.min(indicadores.length - 1, currentSlide + 1);
             updateCarrossel();
         });
         
-        // Indicadores
         indicadores.forEach((ind, index) => {
             ind.addEventListener('click', () => {
                 currentSlide = index;
@@ -238,7 +256,6 @@ function inicializarCarrosseis() {
             });
         });
         
-        // Scroll para detectar slide atual
         carrossel.addEventListener('scroll', () => {
             const slide = Math.round(carrossel.scrollLeft / carrossel.offsetWidth);
             if (slide !== currentSlide) {
@@ -248,6 +265,11 @@ function inicializarCarrosseis() {
                 });
             }
         });
+        
+        // Seta o primeiro indicador como ativo
+        if(indicadores.length > 0) {
+            indicadores[0].classList.add('ativo');
+        }
     });
 }
 
@@ -259,11 +281,9 @@ function inicializarFiltrosGaleria() {
         filtro.addEventListener('click', () => {
             const categoria = filtro.dataset.categoria;
             
-            // Atualiza botão ativo
             filtros.forEach(f => f.classList.remove('ativo'));
             filtro.classList.add('ativo');
             
-            // Filtra os itens
             itens.forEach(item => {
                 if (categoria === 'todos' || item.dataset.categoria === categoria) {
                     item.style.display = 'block';
@@ -273,6 +293,4 @@ function inicializarFiltrosGaleria() {
             });
         });
     });
-
 }
-
