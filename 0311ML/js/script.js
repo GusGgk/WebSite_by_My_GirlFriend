@@ -1,9 +1,3 @@
-/* --- 
-======================================
-Arquivo: js/script.js
-(Versão limpa - Apenas o Contador)
-======================================
---- */
 
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -11,13 +5,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const contadorElement = document.getElementById('contador');
 
     // --- Lógica do Contador de Tempo Juntos ---
-
-    // !! IMPORTANTE: COLOQUE A DATA DE VOCÊS AQUI !!
-    // Formato: Ano, Mês (Janeiro=0, Fev=1, ... Dez=11), Dia, Hora, Minuto, Segundo
-    const dataInicio = new Date(2024, 5, 21, 20, 18, 0); // Exemplo: 15 de Outubro de 2022, às 20:00
+    const dataInicio = new Date(2024, 5, 21, 20, 18, 0);
 
     function atualizarContador() {
-        if (!contadorElement) return; // Garante que o elemento exista
+        if (!contadorElement) return; 
 
         const agora = new Date();
         const diferenca = agora.getTime() - dataInicio.getTime();
@@ -48,5 +39,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Define um intervalo para atualizar o contador a cada segundo
     setInterval(atualizarContador, 1000);
+
 
 });
