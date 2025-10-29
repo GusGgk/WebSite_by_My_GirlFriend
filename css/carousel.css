@@ -1,0 +1,224 @@
+/* ======================================
+CARROSSEL PERSONALIZADO
+====================================== */
+
+.carrossel-container {
+    position: relative;
+    margin: 20px 0;
+    border-radius: 12px;
+    overflow: hidden;
+    background: var(--cor-secundaria);
+}
+
+.carrossel {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.carrossel::-webkit-scrollbar {
+    display: none;
+}
+
+.carrossel-item {
+    flex: 0 0 auto;
+    width: 100%;
+    scroll-snap-align: start;
+    position: relative;
+}
+
+.carrossel-img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    display: block;
+}
+
+.carrossel-descricao {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+    color: white;
+    padding: 20px 15px 10px;
+    text-align: center;
+    font-size: 0.9em;
+}
+
+.carrossel-controles {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 10px;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+
+.carrossel-btn {
+    background: rgba(255, 255, 255, 0.8);
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    pointer-events: all;
+    transition: all 0.3s ease;
+    font-size: 1.2em;
+    color: var(--cor-principal);
+}
+
+.carrossel-btn:hover {
+    background: white;
+    transform: scale(1.1);
+}
+
+.carrossel-indicadores {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    padding: 15px;
+    background: var(--cor-secundaria);
+}
+
+.carrossel-indicador {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--cor-borda);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.carrossel-indicador.ativo {
+    background: var(--cor-principal);
+    transform: scale(1.2);
+}
+
+/* ======================================
+GALERIA COM FILTROS
+====================================== */
+
+.galeria-filtros {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+.filtro-btn {
+    background: var(--cor-secundaria);
+    border: 1px solid var(--cor-borda);
+    color: var(--cor-texto-claro);
+    padding: 8px 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.9em;
+}
+
+.filtro-btn:hover,
+.filtro-btn.ativo {
+    background: var(--cor-principal);
+    color: white;
+    border-color: var(--cor-principal);
+}
+
+.grid-galeria {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 15px;
+}
+
+.galeria-item {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    aspect-ratio: 1;
+}
+
+.galeria-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.galeria-item:hover img {
+    transform: scale(1.05);
+}
+
+.galeria-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+    color: white;
+    padding: 15px;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+}
+
+.galeria-item:hover .galeria-overlay {
+    transform: translateY(0);
+}
+
+.galeria-data {
+    font-size: 0.8em;
+    opacity: 0.8;
+    margin-top: 5px;
+}
+
+/* ======================================
+RESPONSIVIDADE
+====================================== */
+
+@media (max-width: 768px) {
+    .carrossel-img {
+        height: 250px;
+    }
+    
+    .carrossel-btn {
+        width: 35px;
+        height: 35px;
+    }
+    
+    .grid-galeria {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+    
+    .galeria-filtros {
+        gap: 5px;
+    }
+    
+    .filtro-btn {
+        padding: 6px 12px;
+        font-size: 0.8em;
+    }
+}
+
+@media (max-width: 480px) {
+    .carrossel-img {
+        height: 200px;
+    }
+    
+    .grid-galeria {
+        grid-template-columns: 1fr;
+    }
+    
+    .galeria-item {
+        aspect-ratio: 4/3;
+    }
+}

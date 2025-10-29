@@ -1,0 +1,142 @@
+{
+  "casal": {
+    "nome1": "Gu",
+    "nome2": "Malu",
+    "dataInicio": "2024-06-21"
+  },
+  "curiosidades": [
+    {
+      "titulo": "Onde Tudo Começou",
+      "texto": "Aqui você escreve sobre o dia em que se conheceram, a primeira conversa, o primeiro 'oi'...",
+      "carrossel": [
+        {
+          "url": "assets/images/primeiro-encontro/1.jpg",
+          "descricao": "Nosso primeiro encontro"
+        },
+        {
+          "url": "assets/images/primeiro-encontro/2.jpg",
+          "descricao": "O lugar onde nos conhecemos"
+        },
+        {
+          "url": "assets/images/primeiro-encontro/3.jpg",
+          "descricao": "Primeira selfie juntos"
+        }
+      ]
+    },
+    {
+      "titulo": "Nossa Piada Favorita",
+      "texto": "Aquela piada interna que só nós dois entendemos e que nos faz rir em momentos aleatórios.",
+      "carrossel": [
+        {
+          "url": "assets/images/piadas/1.jpg",
+          "descricao": "Momento engraçado que virou piada"
+        },
+        {
+          "url": "assets/images/piadas/2.jpg",
+          "descricao": "Outra situação engraçada"
+        }
+      ]
+    },
+    {
+      "titulo": "Aquele Perrengue Chique",
+      "texto": "Aquele dia que tudo deu errado, mas no fim foi uma ótima história (como a chuva na praia ou o dia que queimamos o jantar).",
+      "carrossel": [
+        {
+          "url": "assets/images/perrengues/1.jpg",
+          "descricao": "O famoso jantar queimado"
+        },
+        {
+          "url": "assets/images/perrengues/2.jpg",
+          "descricao": "Dia da chuva na praia"
+        },
+        {
+          "url": "assets/images/perrengues/3.jpg",
+          "descricao": "Outro perrengue divertido"
+        }
+      ]
+    },
+    {
+      "titulo": "Minha Coisa Favorita em Você",
+      "texto": "O seu sorriso, o jeito que seu olho brilha, sua paciência comigo, etc. (Escolha uma coisa legal para escrever aqui).",
+      "carrossel": [
+        {
+          "url": "assets/images/favoritas/1.jpg",
+          "descricao": "Seu sorriso lindo"
+        },
+        {
+          "url": "assets/images/favoritas/2.jpg",
+          "descricao": "Seu olhar especial"
+        }
+      ]
+    }
+  ],
+  "galeria": {
+    "titulo": "Nossa Galeria de Memórias",
+    "descricao": "Todos os nossos momentos especiais guardados para sempre",
+    "fotos": [
+      {
+        "url": "assets/images/galeria/1.jpg",
+        "descricao": "Nossa primeira foto juntos!",
+        "data": "2024-06-21",
+        "categoria": "primeiros-momentos"
+      },
+      {
+        "url": "assets/images/galeria/2.jpg",
+        "descricao": "Naquela viagem inesquecível para...",
+        "data": "2024-07-15",
+        "categoria": "viagens"
+      },
+      {
+        "url": "assets/images/galeria/3.jpg",
+        "descricao": "Selfie boba no sofá",
+        "data": "2024-08-02",
+        "categoria": "cotidiano"
+      },
+      {
+        "url": "assets/images/galeria/4.jpg",
+        "descricao": "Formatura / Casamento / Evento importante",
+        "data": "2024-09-20",
+        "categoria": "eventos"
+      },
+      {
+        "url": "assets/images/galeria/5.jpg",
+        "descricao": "Tentando cozinhar juntos",
+        "data": "2024-10-05",
+        "categoria": "cotidiano"
+      },
+      {
+        "url": "assets/images/galeria/6.jpg",
+        "descricao": "Uma foto sua que eu amo",
+        "data": "2024-11-12",
+        "categoria": "especiais"
+      },
+      {
+        "url": "assets/images/galeria/7.jpg",
+        "descricao": "Nosso primeiro Natal juntos",
+        "data": "2024-12-25",
+        "categoria": "datas-especiais"
+      },
+      {
+        "url": "assets/images/galeria/8.jpg",
+        "descricao": "Aquele pôr do sol inesquecível",
+        "data": "2025-01-15",
+        "categoria": "natureza"
+      }
+    ],
+    "categorias": [
+      "todos",
+      "primeiros-momentos",
+      "viagens",
+      "cotidiano",
+      "eventos",
+      "datas-especiais",
+      "natureza",
+      "especiais"
+    ]
+  },
+  "playlist": {
+    "titulo": "Nossa Trilha Sonora",
+    "url": "LINK_DA_SUA_PLAYLIST_EMBUTIDA_AQUI",
+    "descricao": "As músicas que marcaram nossa história"
+  }
+}
