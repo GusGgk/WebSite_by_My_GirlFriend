@@ -203,14 +203,8 @@ body {
 @keyframes blink { 50% { opacity: 0.6; } }
 
 .btn-continuar {
-    position: absolute;
-    
-    /* --- POSIÇÃO CORRIGIDA --- */
-    /* Posicionado 80px abaixo do fundo do wrapper (abaixo da instrução) */
-    bottom: -80px; 
-    left: 50%;
-    transform: translateX(-50%) translateY(20px);
-
+    position: relative; /* em vez de absolute */
+    margin-top: 40px;   /* distância abaixo da rosa */
     padding: 12px 30px;
     background: linear-gradient(45deg, #ff0080, #ff4da6);
     border: 2px solid #ff0080;
@@ -225,10 +219,11 @@ body {
     pointer-events: none;
     font-family: 'Montserrat', sans-serif;
     z-index: 10;
+    transform: translateY(20px);
 }
 .btn-continuar.visible {
     opacity: 1;
-    transform: translateX(-50%) translateY(0);
+    transform: translateY(0);
     pointer-events: all;
 }
 .btn-continuar:hover {
