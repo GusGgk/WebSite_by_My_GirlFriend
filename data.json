@@ -54,11 +54,11 @@
           "descricao": "Quando eu não queria fazer nada no meu aniversário e você fez questão de me arrumar para passearmos e no final do dia tirarmos essa foto juntos"
         },
         {
-          "url": "assets/images/16palmeiras.jpg",
+          "url": "assets/images/16Palmeiras.jpg",
           "descricao": "Quando você topou ir no jogo do palmeiras só para me fazer feliz, mesmo você podendo fazer outras coisas legais"
         },
         {
-          "url": "assets/images/15.png",
+          "url": "assets/images/15.jpg",
           "descricao": "Nossa parceiria sempre realizar conquistas juntos🎓"
         }
       ]
@@ -215,8 +215,6 @@
       "viagens",
       "cotidiano",
       "eventos",
-      "datas-especiais",
-      "natureza",
       "especiais"
     ]
   },
