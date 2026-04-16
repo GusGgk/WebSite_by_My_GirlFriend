@@ -13,9 +13,11 @@ Arquivo: css/rosa-neo.css
 
 body {
     overflow: hidden;
-    /* Fundo do seu tema neo */
-    background: radial-gradient(ellipse at center, #1a0a1f 0%, #0a0014 100%);
-    font-family: 'Montserrat', sans-serif;
+    background:
+        radial-gradient(circle at 10% 20%, rgba(255, 197, 170, 0.35), transparent 35%),
+        radial-gradient(circle at 90% 80%, rgba(200, 75, 95, 0.35), transparent 35%),
+        linear-gradient(160deg, #fff8f2 0%, #ffece2 50%, #ffe3ea 100%);
+    font-family: 'Plus Jakarta Sans', sans-serif;
 }
 
 #canvas {
@@ -35,8 +37,7 @@ body {
     justify-content: center;
     align-items: center;
     z-index: 10;
-    /* Redimensiona a rosa da inspiração para caber melhor */
-    transform: scale(0.8);
+    transform: scale(0.86);
 }
 
 .rosa-wrapper {
@@ -66,23 +67,23 @@ body {
     
     width: 250px;
     height: 250px;
-    border: 2px solid #ff0080;
+    border: 2px solid #c84b5f;
     border-radius: 50%;
     opacity: 0.3;
     animation: pulse 2s ease-in-out infinite;
-    box-shadow: 0 0 20px #ff0080;
+    box-shadow: 0 0 20px rgba(200, 75, 95, 0.7);
     pointer-events: none; 
 }
 @keyframes pulse {
     0%, 100% {
         transform: translate(-30px, 0px) scale(1); /* Posição inicial */
         opacity: 0.3;
-        box-shadow: 0 0 20px #ff0080;
+        box-shadow: 0 0 20px rgba(200, 75, 95, 0.7);
     }
     50% { 
         transform: translate(-30px, 0px) scale(1.1); /* Posição inicial + escala */
         opacity: 0.1; 
-        box-shadow: 0 0 40px #ff0080;
+        box-shadow: 0 0 40px rgba(200, 75, 95, 0.8);
     }
 }
 
@@ -180,10 +181,10 @@ body {
 
 
 .instruction {
-    color: #ff0080;
-    font-size: 1.4em;
+    color: #8f2f4b;
+    font-size: 1.2em;
     text-align: center;
-    text-shadow: 0 0 10px #ff0080, 0 0 20px #ff0080;
+    text-shadow: 0 0 10px rgba(200, 75, 95, 0.2);
     animation: blink 2s ease-in-out infinite;
     opacity: 1;
     transition: opacity 0.5s;
@@ -196,7 +197,8 @@ body {
     transform: translateX(-50%);
     width: 300px; /* Garante que o texto não quebre */
 
-    font-family: 'Dancing Script', cursive;
+    font-family: 'Playfair Display', serif;
+    font-weight: 600;
     z-index: 10;
 }
 .instruction.hidden { opacity: 0; }
@@ -206,18 +208,18 @@ body {
     position: relative; /* em vez de absolute */
     margin-top: 40px;   /* distância abaixo da rosa */
     padding: 12px 30px;
-    background: linear-gradient(45deg, #ff0080, #ff4da6);
-    border: 2px solid #ff0080;
+    background: linear-gradient(45deg, #8f2f4b, #c84b5f);
+    border: 2px solid #c84b5f;
     color: white;
     font-size: 1.1em;
     font-weight: bold;
     border-radius: 50px;
     cursor: pointer;
-    box-shadow: 0 0 20px #ff0080, 0 0 40px #ff0080;
+    box-shadow: 0 14px 28px rgba(143, 47, 75, 0.35);
     opacity: 0;
     transition: all 0.5s ease;
     pointer-events: none;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Plus Jakarta Sans', sans-serif;
     z-index: 10;
     transform: translateY(20px);
 }
@@ -227,7 +229,25 @@ body {
     pointer-events: all;
 }
 .btn-continuar:hover {
-    transform: translateX(-50%) translateY(-3px) scale(1.05);
+    transform: translateY(-3px) scale(1.03);
+}
+
+@media (max-width: 640px) {
+    .container {
+        transform: scale(0.72);
+    }
+
+    .instruction {
+        width: 260px;
+        font-size: 1.08em;
+        bottom: -36px;
+    }
+
+    .btn-continuar {
+        margin-top: 54px;
+        font-size: 1em;
+        padding: 11px 22px;
+    }
 }
 /* --- KEYFRAMES DA SUA INSPIRAÇÃO --- */
 /* (Eu limpei e adicionei os prefixos que faltavam) */

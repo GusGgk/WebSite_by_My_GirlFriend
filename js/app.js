@@ -26,6 +26,10 @@ async function carregarConteudo() {
         carregarCuriosidades(data.curiosidades);
         carregarGaleria(data.galeria);
         carregarPlaylist(data.playlist);
+        carregarExperienciaEspecial(data);
+
+        // Permite que outros scripts iniciem comportamentos após o conteúdo dinâmico.
+        document.dispatchEvent(new CustomEvent('contentReady'));
 
     } catch (error) {
         console.error("Não foi possível carregar o conteúdo:", error);
@@ -59,6 +63,8 @@ function atualizarInfoCasal(casal) {
 // Função para criar os cards de curiosidades com carrossel
 function carregarCuriosidades(curiosidades) {
     const container = document.getElementById('curiosidades-container');
+    if (!container || !Array.isArray(curiosidades)) return;
+
     container.innerHTML = '';
 
     curiosidades.forEach((item, index) => {
@@ -67,13 +73,13 @@ function carregarCuriosidades(curiosidades) {
             : '<p class="sem-fotos">Nenhuma foto adicionada ainda</p>';
 
         const cardHtml = `
-            <div class="card" data-aos="fade-up">
+            <article class="card">
                 <h3>${item.titulo}</h3>
                 <p>${item.texto}</p>
                 <div class="carrossel-container">
                     ${carrosselHtml}
                 </div>
-            </div>
+            </article>
         `;
         
         container.innerHTML += cardHtml;
@@ -85,7 +91,7 @@ function carregarCuriosidades(curiosidades) {
 
 // Função para criar o HTML do carrossel
 function criarCarrossel(fotos, index) {
-    const slides = fotos.map((foto, slideIndex) => `
+    const slides = fotos.map((foto) => `
         <div class="carrossel-item">
             <img src="${foto.url}" alt="${foto.descricao}" class="carrossel-img" loading="lazy">
             <div class="carrossel-descricao">${foto.descricao}</div>
@@ -101,8 +107,8 @@ function criarCarrossel(fotos, index) {
             ${slides}
         </div>
         <div class="carrossel-controles">
-            <button class="carrossel-btn prev" data-carrossel="${index}">‹</button>
-            <button class="carrossel-btn next" data-carrossel="${index}">›</button>
+            <button class="carrossel-btn prev" data-carrossel="${index}" aria-label="Foto anterior">‹</button>
+            <button class="carrossel-btn next" data-carrossel="${index}" aria-label="Próxima foto">›</button>
         </div>
         <div class="carrossel-indicadores">
             ${indicadores}
@@ -113,9 +119,11 @@ function criarCarrossel(fotos, index) {
 // Função para criar a galeria com filtros
 function carregarGaleria(galeria) {
     const container = document.getElementById('galeria-container');
+    if (!container || !galeria || !Array.isArray(galeria.fotos)) return;
     
     // Cria os filtros
-    const filtrosHtml = galeria.categorias.map(categoria => `
+    const categorias = Array.isArray(galeria.categorias) ? galeria.categorias : ['todos'];
+    const filtrosHtml = categorias.map(categoria => `
         <button class="filtro-btn ${categoria === 'todos' ? 'ativo' : ''}" 
                 data-categoria="${categoria}">
             ${formatarCategoria(categoria)}
@@ -123,8 +131,8 @@ function carregarGaleria(galeria) {
     `).join('');
 
     // Cria o grid de fotos
-    const fotosHtml = galeria.fotos.map(foto => `
-        <div class="galeria-item" data-categoria="${foto.categoria}" data-data="${foto.data}">
+    const fotosHtml = galeria.fotos.map((foto, index) => `
+        <div class="galeria-item" data-index="${index}" data-categoria="${foto.categoria}" data-data="${foto.data}">
             <img src="${foto.url}" alt="${foto.descricao}" loading="lazy">
             <div class="galeria-overlay">
                 <div class="galeria-descricao">${foto.descricao}</div>
@@ -208,9 +216,24 @@ function formatarCategoria(categoria) {
 }
 
 function formatarData(dataString) {
-    // Adiciona "T00:00:00" para evitar problemas de fuso horário (Timezone)
-    const data = new Date(dataString + "T00:00:00");
+    if (!dataString) return 'Data especial';
+
+    const data = parseDataSeguro(dataString);
+    if (Number.isNaN(data.getTime())) return 'Momento inesquecível';
+
     return data.toLocaleDateString('pt-BR');
+}
+
+function isDataUtil(dataString) {
+    return !!dataString && !Number.isNaN(parseDataSeguro(dataString).getTime());
+}
+
+function parseDataSeguro(dataString) {
+    if (/^\d{4}$/.test(dataString)) {
+        return new Date(`${dataString}-01-01T00:00:00`);
+    }
+
+    return new Date(dataString.length <= 10 ? `${dataString}T00:00:00` : dataString);
 }
 
 // ======================================
@@ -293,4 +316,55 @@ function inicializarFiltrosGaleria() {
             });
         });
     });
+}
+
+function carregarExperienciaEspecial(data) {
+    carregarCarta(data.cartaEspecial);
+    carregarLinhaDoTempo(data.galeria && Array.isArray(data.galeria.fotos) ? data.galeria.fotos : []);
+}
+
+function carregarCarta(cartaEspecial) {
+    const title = document.getElementById('letterTitle');
+    const message = document.getElementById('letterMessage');
+    const signature = document.getElementById('letterSignature');
+
+    const fallback = {
+        titulo: 'Carta Especial',
+        mensagem: 'Se esta carta abriu, ja valeu a pena. Obrigado por cada sorriso, por cada conversa e por cada dia ao seu lado. Te amo.',
+        assinatura: 'Com amor, Gu'
+    };
+
+    const carta = cartaEspecial || fallback;
+
+    if (title) title.textContent = carta.titulo || fallback.titulo;
+    if (message) message.textContent = carta.mensagem || fallback.mensagem;
+    if (signature) signature.textContent = carta.assinatura || fallback.assinatura;
+}
+
+function carregarLinhaDoTempo(fotos) {
+    const container = document.getElementById('timeline-container');
+    if (!container) return;
+
+    const itensOrdenados = fotos
+        .filter((foto) => isDataUtil(foto.data))
+        .sort((a, b) => parseDataSeguro(a.data).getTime() - parseDataSeguro(b.data).getTime())
+        .slice(0, 8);
+
+    if (itensOrdenados.length === 0) {
+        container.innerHTML = '<p class="timeline-empty">Adicione datas em mais fotos para desbloquear a linha do tempo especial.</p>';
+        return;
+    }
+
+    container.innerHTML = itensOrdenados.map((foto) => `
+        <article class="timeline-item">
+            <span class="timeline-dot" aria-hidden="true"></span>
+            <div class="timeline-card">
+                <img src="${foto.url}" alt="${foto.descricao}" loading="lazy">
+                <div>
+                    <p class="timeline-date">${formatarData(foto.data)}</p>
+                    <p class="timeline-text">${foto.descricao}</p>
+                </div>
+            </div>
+        </article>
+    `).join('');
 }

@@ -7,7 +7,7 @@
   "curiosidades": [
     {
       "titulo": "Onde Tudo Começou",
-      "texto": "Tudo começou na escola, no curso para o ENEM, onde eu te vi pela primeira vez, demorei até conversar com você, mas quando eu finalmente consegui te chamar para sair, você quase me deu um bolo KKKKK, mas no final saímos juntos e vimos que a química bateu.",
+      "texto": "Tudo começou na escola, no curso para o ENEM, onde eu te vi pela primeira vez. Demorei para conversar com você, mas quando finalmente te chamei para sair, quase levei um bolo KKKKK. No fim, saímos juntos e percebemos que a química era real.",
       "carrossel": [
         {
           "url": "assets/images/1encontro.jpg",
@@ -15,7 +15,7 @@
         },
         {
           "url": "assets/images/taisho.jpg",
-          "descricao": "No taisho"
+          "descricao": "No Taisho"
         },
         {
           "url": "assets/images/escola.jpg",
@@ -24,48 +24,48 @@
       ]
     },
     {
-      "titulo": "Momentos favoritos",
-      "texto": "Todos meus momentos com você são únicos meu amor, mas separei com algumas fotos, momentos que eu esqueci completamente do mundo,dos problemas e só consegui pensar na sua companhia.",
+      "titulo": "Momentos Favoritos",
+      "texto": "Todos os momentos com você são únicos, meu amor. Separei algumas fotos de instantes em que eu esqueci do mundo e só consegui pensar na sua companhia.",
       "carrossel": [
         {
           "url": "assets/images/5.jpg",
-          "descricao": "Nossas bricadeiras no mar de Recife"
+          "descricao": "Nossas brincadeiras no mar de Recife"
         },
         {
           "url": "assets/images/9doutora.jpg",
-          "descricao": "Uma das primeiras vezes que vi você de jaleco🥰"
+          "descricao": "Uma das primeiras vezes que vi você de jaleco"
         },
         {
           "url": "assets/images/10newdate.jpg",
-          "descricao": "Quando decidimos acordar 5:30 da manhã para ver o nascer do sol em balneário, fazendo um piquenique"
+          "descricao": "Quando acordamos 5:30 para ver o nascer do sol em Balneario, com piquenique"
         },
         {
           "url": "assets/images/18.jpg",
-          "descricao": "Não podia faltar a gente andando de jet ski pela primeira vez"
+          "descricao": "Nossa primeira vez andando de jet ski"
         }
       ]
     },
     {
-      "titulo": "Momentos de Parceiria",
-      "texto": "Separei alguns momentos que percebi o quanto somos parceiros, seja em viagens, em perrengues ou até mesmo no dia a dia, você sempre está do meu lado e eu do seu, e isso me faz muito feliz.",
+      "titulo": "Momentos de Parceria",
+      "texto": "Separei momentos em que percebi o quanto somos parceiros: em viagens, nos perrengues e no dia a dia. Você sempre esta do meu lado, e eu do seu. Isso me faz muito feliz.",
       "carrossel": [
         {
           "url": "assets/images/1.jpg",
-          "descricao": "Quando eu não queria fazer nada no meu aniversário e você fez questão de me arrumar para passearmos e no final do dia tirarmos essa foto juntos"
+          "descricao": "No meu aniversario: você me animou, me arrumou e fizemos esse registro lindo"
         },
         {
           "url": "assets/images/16Palmeiras.jpg",
-          "descricao": "Quando você topou ir no jogo do palmeiras só para me fazer feliz, mesmo você podendo fazer outras coisas legais"
+          "descricao": "Quando você topou ir ao jogo do Palmeiras so para me ver feliz"
         },
         {
           "url": "assets/images/15.jpg",
-          "descricao": "Nossa parceiria sempre realizar conquistas juntos🎓"
+          "descricao": "Nossa parceria em cada conquista"
         }
       ]
     },
     {
-      "titulo": "Minha Coisa Favorita em Você",
-      "texto": "Impossível descrever uma única coisa em você que eu amo, é díficil expressar tudo que eu gosto, admiro em você, amo seu sorriso, sua bondade, simpatia, seus olhos, suas caretas, brincadeiras, enfim te amo por completo.",
+      "titulo": "Minha Coisa Favorita em Voce",
+      "texto": "E impossivel escolher uma unica coisa em voce. Eu amo seu sorriso, sua bondade, sua simpatia, seus olhos, suas caretas e suas brincadeiras. Eu te amo por completo.",
       "carrossel": [
         {
           "url": "assets/images/12.jpg",
@@ -77,26 +77,24 @@
         },
         {
           "url": "assets/images/meigo.jpg",
-          "descricao": "Sua ingenuidade e jeito meigo de ser"
+          "descricao": "Seu jeito meigo de ser"
         }
-        
       ]
     }
   ],
-
   "galeria": {
-    "titulo": "Nossa Galeria de Memórias",
+    "titulo": "Nossa Galeria de Memorias",
     "descricao": "Todos os nossos momentos especiais guardados para sempre",
     "fotos": [
       {
         "url": "assets/images/1encontro.jpg",
-        "descricao": "Nossa primeira foto juntos!",
+        "descricao": "Nossa primeira foto juntos",
         "data": "2024-04-05",
         "categoria": "primeiros-momentos"
       },
       {
         "url": "assets/images/taisho.jpg",
-        "descricao": "No taisho",
+        "descricao": "No Taisho",
         "data": "",
         "categoria": "primeiros-momentos"
       },
@@ -114,13 +112,13 @@
       },
       {
         "url": "assets/images/9doutora.jpg",
-        "descricao": "Uma das primeiras vezes que vi você de jaleco🥰",
+        "descricao": "Uma das primeiras vezes que vi voce de jaleco",
         "data": "",
         "categoria": "especiais"
       },
       {
         "url": "assets/images/10newdate.jpg",
-        "descricao": "Piquenique ao nascer do sol em Balneário",
+        "descricao": "Piquenique ao nascer do sol em Balneario",
         "data": "",
         "categoria": "viagens"
       },
@@ -132,19 +130,19 @@
       },
       {
         "url": "assets/images/1.jpg",
-        "descricao": "Foto do meu aniversário — você me arrumou e saímos para passear",
+        "descricao": "No meu aniversario, voce me arrumou e saimos para passear",
         "data": "",
         "categoria": "eventos"
       },
       {
         "url": "assets/images/16Palmeiras.jpg",
-        "descricao": "Quando você topou ir no jogo do Palmeiras só para me fazer feliz",
+        "descricao": "Quando voce topou ir no jogo do Palmeiras so para me fazer feliz",
         "data": "",
         "categoria": "eventos"
       },
       {
         "url": "assets/images/15.jpg",
-        "descricao": "Parceiria — realizando conquistas juntos🎓",
+        "descricao": "Parceria: realizando conquistas juntos",
         "data": "2024-12-18",
         "categoria": "especiais"
       },
@@ -162,19 +160,19 @@
       },
       {
         "url": "assets/images/2.jpg",
-        "descricao": "Risadas em um simples momento juntos",
+        "descricao": "Risadas em um momento simples juntos",
         "data": "",
         "categoria": "cotidiano"
       },
       {
         "url": "assets/images/3.jpg",
-        "descricao": "Um olhar muito sincero para um dos momentos mais importantes da minha vida",
+        "descricao": "Um olhar sincero em um dia importante da minha vida",
         "data": "2024-12-18",
         "categoria": "eventos"
       },
       {
         "url": "assets/images/4.jpg",
-        "descricao": "Nós se divertindo no mar",
+        "descricao": "Nos divertindo no mar",
         "data": "2024-09-20",
         "categoria": "viagens"
       },
@@ -186,25 +184,25 @@
       },
       {
         "url": "assets/images/6.jpg",
-        "descricao": "Uma foto sua que eu amo no seu aniversário passado",
+        "descricao": "Uma foto sua que eu amo no seu aniversario",
         "data": "2024-11-03",
         "categoria": "especiais"
       },
       {
         "url": "assets/images/7.jpg",
-        "descricao": "Nós se amando no Cadore em uma noite qualquer",
+        "descricao": "Nos amando no Cadore em uma noite qualquer",
         "data": "2024",
         "categoria": "cotidiano"
       },
       {
         "url": "assets/images/8.jpg",
-        "descricao": "Em uma hamburgueria apenas se amando",
+        "descricao": "Numa hamburgueria, apenas curtindo nossa companhia",
         "data": "2025-03-14",
         "categoria": "cotidiano"
       },
       {
         "url": "assets/images/meigo.jpg",
-        "descricao": "Talvez a foto que eu mais ama sua",
+        "descricao": "Talvez a sua foto que eu mais amo",
         "data": "2024-01-10",
         "categoria": "viagens"
       }
@@ -218,10 +216,14 @@
       "especiais"
     ]
   },
-
   "playlist": {
     "titulo": "Nossa Trilha Sonora",
     "url": "https://open.spotify.com/embed/playlist/0l2SFpiXJMLdlsS6lmIBWH?utm_source=generator",
-    "descricao": "As músicas que marcaram nossa história"
+    "descricao": "As musicas que marcaram nossa historia"
+  },
+  "cartaEspecial": {
+    "titulo": "Para a mulher da minha vida",
+    "mensagem": "Malu, cada dia com voce confirma que amar voce foi a melhor escolha da minha vida. Obrigado por estar comigo nas alegrias, nos planos e nos desafios. Quero continuar evoluindo ao seu lado e construindo uma historia cada vez mais linda.",
+    "assinatura": "Com todo meu amor, Gu"
   }
 }

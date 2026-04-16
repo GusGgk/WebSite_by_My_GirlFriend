@@ -3,56 +3,84 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Para Meu Amor ❤️ - Gu e Malu</title>
+    <title>Gu & Malu | Nossa História</title>
 
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/carousel.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <div class="scroll-progress" aria-hidden="true"></div>
+    <div class="noise-layer" aria-hidden="true"></div>
 
     <div id="main-content" class="main-content">
-        
         <header class="hero-section">
+            <p class="hero-kicker">Portfólio do nosso amor</p>
             <h1 id="hero-titulo">Gu e Malu</h1>
-            <p id="hero-subtitulo">Cada segundo ao seu lado, precisa ser eternizado para sempre na internet, TE AMO</p>
+            <p id="hero-subtitulo">Cada capítulo com você vira lembrança eterna.</p>
+            <div class="cta-row">
+                <a href="#curiosidades-container" class="cta-btn">Explorar Nossa História</a>
+                <button id="surpriseModeBtn" class="cta-btn cta-outline">Ativar Modo Surpresa</button>
+            </div>
         </header>
 
         <section class="contador-section">
-            <h2>Nossa Vida Juntos</h2>
+            <h2>Tempo de parceria</h2>
+            <p class="section-subtitle">Desde 21/06/2024 às 20:18</p>
             <h1 id="contador">Calculando...</h1>
         </section>
 
         <section class="curiosidades">
-            <h2>Nossas memórias eternizadas</h2>
-            
-            <div id="curiosidades-container">
-                </div>
+            <h2>Nossos capítulos favoritos</h2>
+            <p class="section-subtitle">Momentos que merecem replay infinito.</p>
+            <div id="curiosidades-container"></div>
         </section>
 
         <section class="playlist-section">
             <h2 id="playlist-titulo">Nossa Playlist</h2>
             <p id="playlist-descricao"></p>
-            
-            <div id="playlist-container">
-                </div>
+            <div id="playlist-container"></div>
+        </section>
+
+        <section class="special-section">
+            <h2>Experiência especial</h2>
+            <p class="section-subtitle">Um jeito único de reviver cada fase da nossa história.</p>
+            <div class="special-actions">
+                <button id="openLetterBtn" class="special-btn">Abrir Carta Especial</button>
+            </div>
+            <div id="timeline-container" class="timeline"></div>
         </section>
 
         <section class="galeria">
-            <h2>Nossa Galeria de Memórias</h2>
-
-            <div id="galeria-container" class="grid-galeria">
-                </div>
+            <h2>Nossa galeria viva</h2>
+            <p class="section-subtitle">Filtra, relembra e sente tudo de novo.</p>
+            <div id="galeria-container" class="grid-galeria"></div>
         </section>
 
         <footer>
-            <p>Feito com ❤️ por Gu para Malu</p>
-            <p>© 2025 - Eternidade é pouco para o nosso amor</p>
+            <p>Feito por Gu para Malu, com amor, código e muita história.</p>
+            <p>© 2026 - Nossa evolução continua.</p>
         </footer>
+    </div>
 
+    <div class="lightbox" id="lightbox" aria-hidden="true" role="dialog" aria-label="Visualizador de fotos">
+        <button class="lightbox-close" id="lightboxClose" aria-label="Fechar visualizador">×</button>
+        <button class="lightbox-nav prev" id="lightboxPrev" aria-label="Foto anterior">‹</button>
+        <img id="lightboxImage" src="" alt="">
+        <button class="lightbox-nav next" id="lightboxNext" aria-label="Próxima foto">›</button>
+        <p id="lightboxCaption"></p>
+    </div>
+
+    <div class="letter-modal" id="letterModal" aria-hidden="true" role="dialog" aria-label="Carta especial">
+        <div class="letter-paper">
+            <button class="letter-close" id="letterClose" aria-label="Fechar carta">×</button>
+            <h3 id="letterTitle">Carta Especial</h3>
+            <p id="letterMessage"></p>
+            <p id="letterSignature" class="letter-signature"></p>
+        </div>
     </div>
 
     <script src="js/script.js"></script>
